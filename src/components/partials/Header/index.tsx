@@ -1,5 +1,6 @@
 import SearchInput from "@/components/SearchInput";
 import ShoppingCart from "@/components/ShoppingCart";
+import Link from "next/link";
 const Index = () => {
 
     const menu = [
@@ -14,13 +15,13 @@ const Index = () => {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center justify-between w-full">
                         <div className="flex-shrink-0">
-                            <a href="/" className="text-xl font-bold">My Website</a>
+                            <Link href="/" className="text-xl font-bold">My Website</Link>
                         </div>
                         <nav className="ml-10 flex items-baseline space-x-4">
                             {menu.map((item) => (
-                                <a key={item.name} href={item.path} className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-md font-medium">
+                                <Link key={item.name} href={item.path} className="text-gray-900 hover:text-gray-700 px-3 py-2 rounded-md text-md font-medium">
                                     {item.name}
-                                </a>
+                                </Link>
                             ))}
                         </nav>
                         <SearchInput />
