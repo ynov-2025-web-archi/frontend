@@ -21,7 +21,6 @@ const Index = () => {
 
         setStatus("loading");
         setMessage("");
-
         try {
             const result = await subscribeToNewsletter(email);
 

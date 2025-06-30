@@ -19,7 +19,7 @@ export async function subscribeToNewsletter(email: string): Promise<NewsletterRe
       };
     }
 
-    const apiUrl = process.env.API_GATEWAY_URL || 'http://localhost:3001';
+    const apiUrl = process.env.API_GATEWAY_URL;
     const response = await fetch(`${apiUrl}/api/newsletter/subscribe`, {
       method: 'POST',
       headers: {
@@ -28,6 +28,7 @@ export async function subscribeToNewsletter(email: string): Promise<NewsletterRe
       body: JSON.stringify({ email }),
     });
 
+    console.error(response);
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
       return {
